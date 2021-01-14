@@ -1,0 +1,28 @@
+github-inventions
+=================
+
+Filling-out a US employment agreement?
+Daunted by the idea of having to fill-out a list of "prior inventions"?
+
+We're here to help!
+
+Run this simple script to list all your original (non-fork), public
+repositories from GitHub, sorted in a reverse-chronological order of creation,
+formatted as pipe-separated-values (name date description), like so:
+
+    foo|2020-07-28|Makes very efficient foo sounds.
+    bar|2010-10-31|Consumes all the chocolate bars.
+    grandmas-computer-configs|2015-03-25|-
+
+which then can be passed through `column` for nice alignment, like this
+
+    foo                        2020-07-28  Makes very efficient foo sounds.
+    bar                        2010-10-31  Consumes all the chocolate bars.
+    grandmas-computer-configs  2015-03-25  -
+
+Yes, many repos are silly, but so are many lawsuits...
+
+Example usage
+-------------
+
+    ./github-inventions.rkt xandkar | column -ts\| > github-xandkar.txt
