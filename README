@@ -1,28 +1,34 @@
 github-inventions
 =================
 
-Filling-out a US employment agreement?
+Filling-out a US employment or contract agreement?
 Daunted by the idea of having to fill-out a list of "prior inventions"?
 
 We're here to help!
 
-Run this simple script to list all your original (non-fork), public
-repositories from GitHub, sorted in a reverse-chronological order of creation,
-formatted as pipe-separated-values (name date description), like so:
+Run this tool and it will:
 
-    foo|2020-07-28|Makes very efficient foo sounds.
-    bar|2010-10-31|Consumes all the chocolate bars.
-    grandmas-computer-configs|2015-03-25|-
+1. fetch a list of repos from GitHub for a given username
+2. filter-out forks
+3. filter-out user-specified repos (see `--exclude` option)
+4. sort repos by `created_at` date, from youngest first to oldest last
+5. format repos as a text table with 3 columns: name, created_on, description
+6. output the table to `stdout` (default) or a given file (see `--out` option)
 
-which then can be passed through `column` for nice alignment, like this
+example
+-------
 
-    foo                        2020-07-28  Makes very efficient foo sounds.
-    bar                        2010-10-31  Consumes all the chocolate bars.
-    grandmas-computer-configs  2015-03-25  -
+    $ github-inventions torvalds
+    NAME        CREATED_ON  DESCRIPTION
 
-Yes, many repos are silly, but so are many lawsuits...
+    1590A       2025-03-01  Random odd guitar pedal design in
+                            kicad
 
-Example usage
--------------
+    uemacs      2018-01-17  Random version of microemacs with my
+                            private modificatons
 
-    ./github-inventions.rkt xandkar | column -ts\| > github-xandkar.txt
+    pesconvert  2017-12-04  Brother PES file converter
+
+    test-tlb    2017-03-24  Stupid memory latency and TLB tester
+
+    linux       2011-09-04  Linux kernel source tree

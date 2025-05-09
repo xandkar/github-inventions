@@ -1,0 +1,23 @@
+[package]
+name = "github-inventions"
+version = "0.1.0"
+edition = "2021"
+description = "Retrieves and formats list of repos from GitHub for 'prior inventions' exhibits"
+repository = "https://github.com/xandkar/github-inventions"
+authors = ["Siraaj Khandkar <siraaj@khandkar.net>"]
+keywords = []
+categories = ["command-line-utilities"]
+license-file = "LICENSE"
+readme = "README"
+
+[dependencies]
+anyhow = { version = "1.0.98", features = ["backtrace"] }
+chrono = { version = "0.4.41", features = ["serde"] }
+clap = { version = "4.5.37", features = ["derive"] }
+comfy-table = "7.1.4"
+dirs = "6.0.0"
+reqwest = { version = "0.12.15", features = ["blocking"] }
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0.140"
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
